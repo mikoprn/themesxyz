@@ -1,0 +1,374 @@
+:root {
+    --light-base: #ffffff;
+    --light-accent: #f5f6f9;
+    --dark-base: #000000;
+    --dark-mode: #101010;
+    --dark-accent: #363636;
+    --electricLime: #ccff00;
+    --turquoise-color: #2ffec0;
+    --gradient: linear-gradient(116deg, #2ffec0, #ccff00);
+    --opacity: .8;
+    --border: 1px solid var(--dark-accent);
+    --transition: all 300ms ease-in-out;
+    --fade: fade 500ms ease-in-out forwards;
+
+    /*Size*/
+    --size-xx-small: 0.188rem;
+    --size-x-small: 0.313rem;
+    --size-small-base: 0.5rem;
+    --size-small-l: 0.625rem;
+    --size-small-xl: 0.75rem;
+    --size-base-xs: 0.875rem;
+    --size-base-sm: 0.938rem;
+    --size-base: 1rem;
+    --size-1-xl: 1.125rem;
+    --size-2-base: 1.25rem;
+    --size-2-l: 1.5rem;
+    --size-2-xl: 1.75rem;
+    --size-3-base: 1.875rem;
+    --size-3-xl: 2rem;
+    --size-4-base: 2.5rem;
+    --size-4-xl: 3rem;
+    --size-5-base: 3.125rem;
+    --size-5-xl: 3.5rem;
+    --size-6-base: 3.75rem;
+    --size-6-xl: 4rem;
+    --size-7-base: 4.375rem;
+    --size-7-xl: 4.5rem;
+    --size-8-base: 5rem;
+
+    /*Clamp*/
+    --clamp-x-small: clamp(0.188rem, 0.152rem + 0.179vw, 0.313rem);
+    --clamp-small-base: clamp(0.313rem, 0.259rem + 0.268vw, 0.5rem);
+    --clamp-small-l: clamp(0.5rem, 0.464rem + 0.179vw, 0.625rem);
+    --clamp-small-xl: clamp(0.625rem, 0.589rem + 0.179vw, 0.75rem);
+    --clamp-base-xs: clamp(0.75rem, 0.714rem + 0.179vw, 0.875rem);
+    --clamp-base-sm: clamp(0.875rem, 0.857rem + 0.089vw, 0.938rem);
+    --clamp-base: clamp(0.938rem, 0.92rem + 0.089vw, 1rem);
+    --clamp-1-xl: clamp(1rem, 0.964rem + 0.179vw, 1.125rem);
+    --clamp-2-base: clamp(1.125rem, 1.089rem + 0.179vw, 1.25rem);
+    --clamp-2-l: clamp(1.25rem, 1.179rem + 0.357vw, 1.5rem);
+    --clamp-2-xl: clamp(1.5rem, 1.429rem + 0.357vw, 1.75rem);
+    --clamp-3-base: clamp(1.625rem, 1.554rem + 0.357vw, 1.875rem);
+    --clamp-3-xl: clamp(1.5rem, 1.357rem + 0.714vw, 2rem);
+    --clamp-4-base: clamp(2rem, 1.857rem + 0.714vw, 2.5rem);
+    --clamp-4-xl: clamp(2.25rem, 2.036rem + 1.071vw, 3rem);
+    --clamp-5-base: clamp(2.625rem, 2.482rem + 0.714vw, 3.125rem);
+    --clamp-5-xl: clamp(2.5rem, 2.214rem + 1.429vw, 3.5rem);
+    --clamp-6-base: clamp(3.25rem, 3.107rem + 0.714vw, 3.75rem);
+    --clamp-6-xl: clamp(3.5rem, 3.357rem + 0.714vw, 4rem);
+    --clamp-7-base: clamp(3.875rem, 3.732rem + 0.714vw, 4.375rem);
+    --clamp-7-xl: clamp(4rem, 3.857rem + 0.714vw, 4.5rem);
+    --clamp-navbar: clamp(3.5rem, 3.25rem + 1.25vw, 4.375rem);
+
+    /* Font Sizing 1.200 - Minor Third */
+    --fz-clamp-h1: clamp(2.5rem, 2.214rem + 1.429vw, 3.5rem);
+    --fz-clamp-h2: clamp(2rem, 1.857rem + 0.714vw, 2.5rem);
+    --fz-clamp-h3: clamp(1.75rem, 1.679rem + 0.357vw, 2rem);
+    --fz-clamp-h4: clamp(1.5rem, 1.429rem + 0.357vw, 1.75rem);
+    --fz-clamp-h5: clamp(1.25rem, 1.179rem + 0.357vw, 1.5rem);
+    --fz-clamp-h6: clamp(1.125rem, 1.089rem + 0.179vw, 1.25rem);
+    --fz-base: 1rem;
+    --fz-large: 1.125rem;
+    --fz-clamp-large: clamp(1rem, 0.964rem + 0.179vw, 1.125rem);
+
+    /*Font Weight*/
+    --fw-thin: 100;
+    --fw-extraLight: 200;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+    --fw-extraBold: 800;
+    --fw-black: 900;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.6;
+    font-family: system-ui;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    max-width: 90rem;
+    margin-inline: auto;
+}
+
+.darkmode {
+    background-color: var(--dark-mode);
+    color: var(--light-base);
+}
+
+.darkmode .nav__mobile-btn svg path {
+    fill: var(--dark-base);
+}
+
+.darkmode header.scrolled {
+    background-color: var(--dark-base);
+    color: var(--light-base);
+}
+
+.darkmode .sun {
+    display: block;
+}
+
+.darkmode .moon {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    header.scrolled {
+        background-color: var(--dark-base);
+        color: var(--light-base);
+    }
+
+    .nav__mobile-btn svg path {
+        fill: var(--dark-base);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--light-base);
+        color: var(--dark-base);
+    }
+}
+
+h1 {
+    font-size: var(--fz-clamp-h1);
+    font-weight: var(--fw-medium);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: var(--fz-clamp-h2);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: var(--fz-clamp-h3);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: var(--fz-clamp-h4);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+}
+
+h5 {
+    font-size: var(--fz-clamp-h5);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+}
+
+h6 {
+    font-size: var(--fz-clamp-h6);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+}
+
+p,
+option {
+    font-size: var(--fz-clamp-large);
+    font-weight: var(--fw-regular);
+    font-style: normal;
+}
+
+a,
+button,
+.btn {
+    line-height: normal;
+    color: inherit;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+a:is(:hover, :focus-visible) {
+    color: var(--turquoise-color);
+}
+
+button,
+.btn {
+    font-size: var(--fz-base);
+    font-weight: var(--fw-medium);
+    background-color: transparent;
+    border: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.animationPrimary {
+    animation: var(--fade);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.logo {
+    font-size: var(--size-1-xl);
+    font-weight: var(--fw-semiBold);
+}
+
+.wrapper-contents {
+    max-inline-size: min(100% - clamp(.5rem, 5vw, var(--size-8-base)), 75rem);
+    margin-inline: auto;
+    padding-block: min(12%, 2.5rem);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background-color: var(--light-base);
+    color: var(--dark-base);
+    border-bottom: var(--border);
+}
+
+.nav {
+    padding-block: 0;
+    height: var(--clamp-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu {
+    display: flex;
+    gap: clamp(var(--size-2-base), 5vw, var(--size-5-base));
+}
+
+.nav__link {
+    font-size: 18px;
+    padding-bottom: .3em;
+    border-bottom: var(--size-xx-small) solid transparent;
+}
+
+.nav__link[aria-current="page"] {
+    font-weight: var(--fw-semiBold);
+    border-bottom-color: var(--turquoise-color);
+}
+
+#themeSwitch {
+    cursor: pointer;
+}
+
+.sun {
+    display: none;
+}
+
+.moon {
+    display: block;
+}
+
+.nav__mobile-btn {
+    display: none;
+    cursor: pointer;
+}
+
+main {
+    margin-top: var(--clamp-navbar);
+    animation: var(--fade);
+}
+
+.about p {
+    margin-top: var(--size-small-base);
+}
+
+.footer {
+    padding-block: 1em;
+    border-top: var(--border);
+}
+
+/* Mobile 600px  */
+@media (max-width: 37.5em) {
+    #themeSwitch {
+        margin-inline: auto 1em;
+    }
+
+    .nav__mobile-btn {
+        display: block;
+        background-color: var(--turquoise-color);
+        padding: var(--size-xx-small);
+        border-radius: var(--size-xx-small);
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__mobile-btn svg:first-child {
+        display: block;
+    }
+
+    .nav__mobile-btn svg:last-child {
+        display: none;
+    }
+
+    .nav__menu {
+        position: fixed;
+        width: 80%;
+        height: 100%;
+        top: var(--clamp-navbar);
+        right: 0;
+        transform: translateX(100%);
+        flex-direction: column;
+        padding-top: var(--size-5-base);
+        transition: var(--transition);
+        background-color: var(--dark-accent);
+        z-index: 1;
+    }
+
+    .nav__menu.active {
+        transform: translateX(0%);
+    }
+
+    .nav__menu.active~.nav__mobile-btn svg:first-child {
+        display: none;
+    }
+
+    .nav__menu.active~.nav__mobile-btn svg:last-child {
+        display: block;
+    }
+
+    .nav__menu li {
+        width: 100%;
+    }
+
+    .nav__link {
+        display: block;
+        width: fit-content;
+        color: var(--light-base);
+        font-weight: var(--fw-semiBold);
+        margin-inline: auto;
+    }
+}

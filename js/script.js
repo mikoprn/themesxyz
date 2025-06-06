@@ -1,6 +1,6 @@
 // Header Scrolled
 const header = document.querySelector(".header");
-let lastScrollY = window.scrollY;
+let lastScrollY = 50;
 
 window.addEventListener("scroll", () => {
   if (lastScrollY < window.scrollY) {

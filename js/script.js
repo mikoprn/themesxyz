@@ -1,14 +1,11 @@
 // Header Scrolled
-const header = document.querySelector(".header");
-let lastScrollY = 50;
-
-window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY) {
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
-  lastScrollY = window.scrollY;
 });
 
 // Active Current Page
